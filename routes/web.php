@@ -12,5 +12,45 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return redirect('home');
 });
+
+
+
+
+
+
+//Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@getReset');
+//Route::post('/password/reset', 'Auth\ResetPasswordController@postReset');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/calendar', 'HomeController@calendar');
+
+Route::resource('users', 'UserController');
+
+Route::resource('postulantes', 'PostulanteController');
+
+Route::resource('areas', 'AreasController');
+
+Route::resource('institutos', 'institutosController');
+
+Route::resource('asignaturas', 'AsignaturaController');
+
+Route::resource('categorias', 'CategoriasController');
+
+Route::resource('dedicaciones', 'dedicacionesController');
+
+Route::resource('jurados', 'juradosController');
+
+Route::resource('perfiles', 'perfilesController');
+
+Route::resource('concursos', 'ConcursosController');
+
+Route::resource('concursospostulantes', 'concursospostulantesController');
+
+Route::resource('concursosjurados', 'concursosjuradosController');
+
+Route::resource('ordenesmeritos', 'ordenesmeritoController');
