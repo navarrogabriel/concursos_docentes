@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Registro | Pagina de Registro</title>
@@ -33,6 +34,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
@@ -48,7 +51,7 @@
             {!! csrf_field() !!}
 
             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nombre Completo">
+                <input type="text" required=true class="form-control" name="name" value="{{ old('name') }}" placeholder="Nombre Completo">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                 @if ($errors->has('name'))
@@ -58,8 +61,8 @@
                 @endif
             </div>
 
-            <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Direccion de Correo">
+            <div id=registerForm class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
+                <input type="email" required=true class="form-control" name="email" value="{{ old('email') }}" placeholder="Direccion de Correo">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
                 @if ($errors->has('email'))
@@ -70,7 +73,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
-                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                <input id=password type="password" required=true class="form-control" name="password" placeholder="Contraseña">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password'))
@@ -81,7 +84,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Contraseña">
+                <input id=password_conf type="password" required=true name="password_confirmation" class="form-control" placeholder="Confirmar Contraseña">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password_confirmation'))
@@ -93,15 +96,15 @@
 
             <div class="row">
                 <div class="col-xs-8">
-                    <div class="checkbox icheck">
+                    <div id="registerCheckbox" class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> Acepto los <a href="#">terminos</a>
+                            <input  type="checkbox"> Acepto los <a href="#">terminos</a>
                         </label>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>
+                    <button type="submit" disabled=true id="registerButton" class="btn btn-primary btn-block btn-flat">Registrar</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -120,14 +123,9 @@
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
-    });
-</script>
+<!-- //JS que valida el habilitado del boton de submit y agrega estilo al checbkox  -->
+ 
+ <script src="{{ URL::asset('/js/register.js') }}"></script>
+
 </body>
 </html>
