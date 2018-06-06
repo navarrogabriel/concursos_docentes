@@ -1,0 +1,85 @@
+[
+    {
+        "name": "registro_id",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "universidad_id",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "categoria_id",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "dedicacion",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "registroTipo",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Categoria"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Universidade"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursosjurados"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursospostulantes"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,llamadosconcursos"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,requisitos"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,requisitospostulantes"
+    }
+]

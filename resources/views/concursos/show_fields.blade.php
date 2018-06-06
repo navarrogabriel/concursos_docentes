@@ -1,125 +1,118 @@
+<!--pre-->
+@php
+  //var_dump($concurso->users);
+@endphp
+
 <!-- Id Field -->
 <div class="form-group">
     {!! Form::label('id', 'Id:') !!}
-    <p>{!! $concursos->id !!}</p>
+    <p>{!! $concurso->id !!}</p>
 </div>
 
-<!-- Id Asignatura Field -->
+<!-- Asignatura Id Field -->
 <div class="form-group">
-    {!! Form::label('id_asignatura', 'Asignatura:') !!}
-    <p>{!! $concursos->asignatura->descripcion !!}</p><!--id_asignatura  la cambio por asignatura->descripcion para no mostrar un numero feo -->
+    {!! Form::label('asignatura_id', 'Asignatura Id:') !!}
+    <p>{!! $concurso->asignatura->nombre !!}</p>
 </div>
 
-<!-- Id Categoria Field -->
+<!-- Perfil Id Field -->
 <div class="form-group">
-    {!! Form::label('id_categoria', 'Categoria:') !!}
-    <p>{!! $concursos->categoria->descripcion !!}</p>
+    {!! Form::label('perfil_id', 'Perfil Id:') !!}
+    <p>{!! $concurso->perfile->nombre !!}</p>
 </div>
 
-<!-- Id Perfil Field -->
+<!-- Categoria Id Field -->
 <div class="form-group">
-    {!! Form::label('id_perfil', 'Perfil:') !!}
-    <p>{!! $concursos->perfil->descripcion !!}</p>
-</div>
-
-<!-- Id Dedicacion Field -->
-<div class="form-group">
-    {!! Form::label('id_dedicacion', 'Dedicacion:') !!}
-    <p>{!! $concursos->dedicacion->descripcion !!}</p>
+    {!! Form::label('categoria_id', 'Categoria Id:') !!}
+    <p>{!! $concurso->categoria->nombre !!}</p>
 </div>
 
 <!-- Referenciageneral Field -->
 <div class="form-group">
     {!! Form::label('referenciaGeneral', 'Referenciageneral:') !!}
-    <p>{!! $concursos->referenciaGeneral !!}</p>
+    <p>{!! $concurso->referenciaGeneral !!}</p>
 </div>
 
 <!-- Referenciainstituto Field -->
 <div class="form-group">
     {!! Form::label('referenciaInstituto', 'Referenciainstituto:') !!}
-    <p>{!! $concursos->referenciaInstituto !!}</p>
+    <p>{!! $concurso->referenciaInstituto !!}</p>
 </div>
 
 <!-- Cargos Field -->
 <div class="form-group">
     {!! Form::label('cargos', 'Cargos:') !!}
-    <p>{!! $concursos->cargos !!}</p>
+    <p>{!! $concurso->cargos !!}</p>
 </div>
 
 <!-- Lineadesarrollo Field -->
 <div class="form-group">
     {!! Form::label('lineaDesarrollo', 'Lineadesarrollo:') !!}
-    <p>{!! $concursos->lineaDesarrollo !!}</p>
+    <p>{!! $concurso->lineaDesarrollo !!}</p>
 </div>
 
 <!-- Requisitos Field -->
 <div class="form-group">
     {!! Form::label('requisitos', 'Requisitos:') !!}
-    <p>{!! $concursos->requisitos !!}</p>
+    <p>{!! $concurso->requisitos !!}</p>
 </div>
 
 <!-- Expediente Field -->
 <div class="form-group">
     {!! Form::label('expediente', 'Expediente:') !!}
-    <p>{!! $concursos->expediente !!}</p>
+    <p>{!! $concurso->expediente !!}</p>
 </div>
 
-<!-- fechaSustanciacion Field -->
+<!-- Fechasustanciacion Field -->
 <div class="form-group">
-    {!! Form::label('fechaSustanciacion', 'fechaSustanciacion:') !!}
-    <p>{!! $concursos->fechaSustanciacion !!}</p>
+    {!! Form::label('fechaSustanciacion', 'Fechasustanciacion:') !!}
+    <p>{!! $concurso->fechaSustanciacion !!}</p>
 </div>
 
 <!-- Usuariosustanciacion Field -->
 <div class="form-group">
     {!! Form::label('usuarioSustanciacion', 'Usuariosustanciacion:') !!}
-    <p>{!! $concursos->usuarioSustanciacion !!}</p>
+    <p>{!! $concurso->userSus->name !!}</p>
 </div>
 
 <!-- Usuariocierre Field -->
 <div class="form-group">
     {!! Form::label('usuarioCierre', 'Usuariocierre:') !!}
-    <p>{!! $concursos->usuarioCierre !!}</p>
+    <p>{!! $concurso->userCie->name !!}</p>
 </div>
 
 <!-- Observaciones Field -->
 <div class="form-group">
     {!! Form::label('observaciones', 'Observaciones:') !!}
-    <p>{!! $concursos->observaciones !!}</p>
+    <p>{!! $concurso->observaciones !!}</p>
 </div>
 
 <!-- Fechainicio Field -->
 <div class="form-group">
     {!! Form::label('fechaInicio', 'Fechainicio:') !!}
-    <p>{!! $concursos->fechaInicio !!}</p>
+    <p>{!! $concurso->fechaInicio !!}</p>
 </div>
 
 <!-- Fechafin Field -->
 <div class="form-group">
     {!! Form::label('fechaFin', 'Fechafin:') !!}
-    <p>{!! $concursos->fechaFin !!}</p>
-</div>
-
-<!-- Fechaconcurso Field -->
-<div class="form-group">
-    {!! Form::label('fechaConcurso', 'Fechaconcurso:') !!}
-    <p>{!! $concursos->fechaConcurso !!}</p>
+    <p>{!! $concurso->fechaFin !!}</p>
 </div>
 
 <!-- Estado Field -->
 <div class="form-group">
     {!! Form::label('estado', 'Estado:') !!}
-    <p>{!! $concursos->estado !!}</p>
+    <p>{!! $concurso->estado !!}</p>
 </div>
 
-<!-- Created At Field -->
+<!-- Dedicacion Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $concursos->created_at !!}</p>
+    {!! Form::label('dedicacion', 'Dedicacion:') !!}
+    <p>{!! $concurso->dedicacion !!}</p>
 </div>
 
-<!-- Updated At Field -->
+<!-- Dictamen Field -->
 <div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $concursos->updated_at !!}</p>
+    {!! Form::label('dictamen', 'Dictamen:') !!}
+    <p>{!! $concurso->dictamen !!}</p>
 </div>

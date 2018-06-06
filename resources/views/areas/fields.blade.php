@@ -1,13 +1,13 @@
-<!-- Descripcion Field -->
+<!-- Nombre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Instituto Id Field -->
+<!-- Carrera Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('instituto_id', 'Seleccion El Instituto:') !!}
-    {!! Form::select('instituto_id', $institutos , null, ['class' => 'form-control']) !!}
+    {!! Form::label('carrera_id', 'Carrera:') !!}
+    {!! Form::select('carrera_id', $carreras , null, ['class' => 'form-control' , 'placeholder' => 'Seleccione Carrera']) !!}
 </div>
 
 <!-- Submit Field -->

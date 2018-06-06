@@ -4,10 +4,10 @@
     {!! Form::text('nombres', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Apellido Field -->
+<!-- Apellidos Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('apellido', 'Apellido:') !!}
-    {!! Form::text('apellido', null, ['class' => 'form-control']) !!}
+    {!! Form::label('apellidos', 'Apellidos:') !!}
+    {!! Form::text('apellidos', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Documento Field -->
@@ -31,7 +31,7 @@
 <!-- Email Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::email('email', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Direccion Field -->

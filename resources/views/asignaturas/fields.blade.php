@@ -1,13 +1,13 @@
-<!-- Descripcion Field -->
+<!-- Nombre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Id Area Field -->
+<!-- Area Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_area', 'Seleccion El Area:') !!}
-    {!! Form::select('id_area', $areas , null, ['class' => 'form-control']) !!}
+    {!! Form::label('area_id', 'Area:') !!}
+    {!! Form::select('area_id', $areas , null ,  ['class' => 'form-control' , 'placeholder' => 'Seleccione Asignatura']) !!}
 </div>
 
 <!-- Submit Field -->

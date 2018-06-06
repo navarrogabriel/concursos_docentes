@@ -5,16 +5,14 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Postulante
- * @package App\Models
- * @version May 2, 2018, 9:57 pm UTC
- */
 class Postulante extends Model
 {
     use SoftDeletes;
 
     public $table = 'postulantes';
+
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
 
     protected $dates = ['deleted_at'];
@@ -22,7 +20,7 @@ class Postulante extends Model
 
     public $fillable = [
         'nombres',
-        'apellido',
+        'apellidos',
         'documento',
         'telefono',
         'celular',
@@ -36,8 +34,9 @@ class Postulante extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'nombres' => 'string',
-        'apellido' => 'string',
+        'apellidos' => 'string',
         'documento' => 'string',
         'telefono' => 'string',
         'celular' => 'string',
@@ -51,18 +50,25 @@ class Postulante extends Model
      * @var array
      */
     public static $rules = [
-
+      'nombres' => 'required',
+      'apellidos' => 'required',
+      'documento' => 'required',
+      'email' => 'required',
     ];
-    public function concursospostulantes()
-    {
-    return $this->hasMany('App\Models\Concursospostulantes' , 'id');
 
-    }
-    public function ordenesmeritos()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
+    public function concursos()
     {
-    return $this->hasMany('App\Models\Ordenesmeritos' , 'id');
-
+        return $this->belongsToMany(\App\Models\Concurso::class, 'concursospostulantes');
     }
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     **/
+    public function requisitositems()
+    {
+        return $this->belongsToMany(\App\Models\Requisitositem::class, 'requisitospostulantes');
+    }
 }

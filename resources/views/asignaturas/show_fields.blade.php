@@ -1,29 +1,17 @@
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
+    {!! Form::label('id', 'Registro ID:') !!}
     <p>{!! $asignatura->id !!}</p>
 </div>
 
-<!-- Descripcion Field -->
+<!-- Nombre Field -->
 <div class="form-group">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    <p>{!! $asignatura->descripcion !!}</p>
+    {!! Form::label('nombre', 'Nombre:') !!}
+    <p>{!! $asignatura->nombre !!}</p>
 </div>
 
-<!-- Id Area Field -->
+<!-- Area Id Field -->
 <div class="form-group">
-    {!! Form::label('id_area', 'Id Area:') !!}
-    <p>{!! $asignatura->areas->descripcion !!}</p> <!--relacion para mostrar id_area de la tabla Area   -->
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $asignatura->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $asignatura->updated_at !!}</p>
+    {!! Form::label('area_id', 'Area:') !!}
+    <p>{!! $asignatura->area->nombre !!}</p>
 </div>

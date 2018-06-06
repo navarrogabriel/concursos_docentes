@@ -1,25 +1,19 @@
-<!-- Id Asignatura Field -->
+<!-- Asignatura Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_asignatura', 'Seleccione Asignatura:') !!}
-    {!! Form::select('id_asignatura', $asignatura, null, ['class' => 'form-control']) !!}
+    {!! Form::label('asignatura_id', 'Asignatura Id:') !!}
+    {!! Form::select ('asignatura_id', $asignaturas, null, ['class' => 'form-control' , 'placeholder' => 'Seleccione Asignatura']) !!}
 </div>
 
-<!-- Id Categoria Field -->
+<!-- Perfil Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_categoria', 'Seleccione Categoria:') !!}
-    {!! Form::select('id_categoria', $categoria, null, ['class' => 'form-control']) !!}
+    {!! Form::label('perfil_id', 'Perfil Id:') !!}
+    {!! Form::select('perfil_id', $perfiles , null, ['class' => 'form-control', 'placeholder' => 'Seleccione Perfil']) !!}
 </div>
 
-<!-- Id Perfil Field -->
+<!-- Categoria Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_perfil', 'Seleccione Perfil:') !!}
-    {!! Form::select('id_perfil', $perfil, null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Id Dedicacion Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('id_dedicacion', 'Seleccione Dedicacion:') !!}
-    {!! Form::select('id_dedicacion', $dedicacion, null, ['class' => 'form-control']) !!}
+    {!! Form::label('categoria_id', 'Categoria Id:') !!}
+    {!! Form::select('categoria_id', $categorias , null, ['class' => 'form-control', 'placeholder' => 'Seleccione Categoria']) !!}
 </div>
 
 <!-- Referenciageneral Field -->
@@ -33,10 +27,12 @@
     {!! Form::label('referenciaInstituto', 'Referenciainstituto:') !!}
     {!! Form::text('referenciaInstituto', null, ['class' => 'form-control']) !!}
 </div>
+
 <!-- Cargos Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('cargos', 'cargos:') !!}
+    {!! Form::label('cargos', 'Cargos:') !!}
     {!! Form::text('cargos', null, ['class' => 'form-control']) !!}
+    </label>
 </div>
 
 <!-- Lineadesarrollo Field -->
@@ -57,22 +53,23 @@
     {!! Form::text('expediente', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- fechaSustanciacion Field -->
+<!-- Fechasustanciacion Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fechaSustanciacion', 'fechaSustanciacion:') !!}
+    {!! Form::label('fechaSustanciacion', 'Fechasustanciacion:') !!}
     {!! Form::date('fechaSustanciacion', null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Usuariosustanciacion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('usuarioSustanciacion', 'Usuariosustanciacion:') !!}
-    {!! Form::text('usuarioSustanciacion', null, ['class' => 'form-control']) !!}
+    {!! Form::select('usuarioSustanciacion', $usuarios , null, ['class' => 'form-control' , 'placeholder' => 'Seleccione Usuario']) !!}
 </div>
 
 <!-- Usuariocierre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('usuarioCierre', 'Usuariocierre:') !!}
-    {!! Form::text('usuarioCierre', null, ['class' => 'form-control']) !!}
+    {!! Form::select('usuarioCierre',$usuarios , null, ['class' => 'form-control', 'placeholder' => 'Seleccione Usuario']) !!}
 </div>
 
 <!-- Observaciones Field -->
@@ -83,8 +80,10 @@
 
 <!-- Fechainicio Field -->
 <div class="form-group col-sm-6">
+
     {!! Form::label('fechaInicio', 'Fechainicio:') !!}
     {!! Form::date('fechaInicio', null, ['class' => 'form-control']) !!}
+
 </div>
 
 <!-- Fechafin Field -->
@@ -93,16 +92,22 @@
     {!! Form::date('fechaFin', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- fechaConcurso Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('fechaConcurso', 'Fecha Concurso:') !!}
-    {!! Form::date('fechaConcurso', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Estado Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('estado', 'Estado:') !!}
-    {!! Form::select('estado',['Abierto' , 'Cerrado'] ,'', ['class' => 'form-control']) !!} //Modifique el combobox manualmente
+    {!! Form::select('estado', $estado , null, ['class' => 'form-control' , 'placeholder'=>'Seleccione Estado del Concurso']) !!}
+</div>
+
+<!-- Dedicacion Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('dedicacion', 'Dedicacion:') !!}
+    {!! Form::select('dedicacion', $dedicaciones , null, ['class' => 'form-control' , 'placeholder' => 'Seleccione Dedicacion']) !!}
+</div>
+
+<!-- Dictamen Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('dictamen', 'Dictamen:') !!}
+    {!! Form::text('dictamen', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

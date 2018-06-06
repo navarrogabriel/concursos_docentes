@@ -13,6 +13,12 @@
         <!-- Styles -->
         <style>
             html, body {
+                background-image: url('{{ asset('imagenes/fondo_pizarra.jpg')}}');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;

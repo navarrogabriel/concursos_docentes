@@ -1,0 +1,63 @@
+[
+    {
+        "name": "requisitoitem_id",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "postulante_id",
+        "dbType": "integer,false",
+        "htmlType": null,
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "requisitoEstado",
+        "dbType": "boolean",
+        "htmlType": "checkbox,1",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Postulante"
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Requisitositem"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,cargosconcursados"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursosjurados"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursospostulantes"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,llamadosconcursos"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,requisitos"
+    }
+]

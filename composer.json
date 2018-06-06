@@ -14,9 +14,11 @@
         "jlapp/swaggervel": "dev-master",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.4.0"
+        "laravelcollective/html": "^5.4.0",
+        "yajra/laravel-datatables-buttons": "^2.0"
     },
     "require-dev": {
+        "appointer/swaggervel": "^2.3",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.7"

@@ -5,26 +5,22 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
-
-/**
- * Class Asignatura
- * @package App\Models
- * @version May 3, 2018, 3:45 am UTC
- */
 class Asignatura extends Model
 {
     use SoftDeletes;
 
     public $table = 'asignaturas';
 
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'descripcion',
-        'id_area'
+        'nombre',
+        'area_id'
     ];
 
     /**
@@ -33,8 +29,9 @@ class Asignatura extends Model
      * @var array
      */
     protected $casts = [
-        'descripcion' => 'string',
-        'id_area' => 'integer'
+        'id' => 'integer',
+        'nombre' => 'string',
+        'area_id' => 'integer'
     ];
 
     /**
@@ -43,14 +40,23 @@ class Asignatura extends Model
      * @var array
      */
     public static $rules = [
-
+        'nombre' => 'required',
+        'area_id' => 'required'
     ];
 
-    public function areas ()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function area()
     {
-      return $this->belongsTo('App\Models\Areas', 'id_area');
-
+        return $this->belongsTo(\App\Models\Area::class);
     }
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function concursos()
+    {
+        return $this->hasMany(\App\Models\Concurso::class);
+    }
 }

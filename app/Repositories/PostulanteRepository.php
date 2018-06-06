@@ -5,6 +5,15 @@ namespace App\Repositories;
 use App\Models\Postulante;
 use InfyOm\Generator\Common\BaseRepository;
 
+/**
+ * Class PostulanteRepository
+ * @package App\Repositories
+ * @version May 31, 2018, 12:28 am UTC
+ *
+ * @method Postulante findWithoutFail($id, $columns = ['*'])
+ * @method Postulante find($id, $columns = ['*'])
+ * @method Postulante first($columns = ['*'])
+*/
 class PostulanteRepository extends BaseRepository
 {
     /**
@@ -12,7 +21,7 @@ class PostulanteRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'nombres',
-        'apellido',
+        'apellidos',
         'documento',
         'telefono',
         'celular',

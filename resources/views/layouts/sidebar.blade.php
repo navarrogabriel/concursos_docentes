@@ -6,24 +6,34 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="https://media.licdn.com/dms/image/C4D03AQGCAmspiKR7PQ/profile-displayphoto-shrink_800_800/0?e=1531958400&v=beta&t=ohsIm9-vyAmpUkQxitT2kzf0r_YAHUt2CaYZvoLec-k" class="img-circle"
+              @php
+              if(empty(Auth::user()->image))
+                {
+                  $image = "http://digilander.libero.it/Ictszu/rev4.0/avatar.jpg";
+                }
+              else
+                {
+                  $image = Auth::user()->image;
+                }
+              @endphp
+                <img src="{{$image}}" class="img-circle"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>Concursos Docentes UNAJ</p>
+                <p>CDUNAJ</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> En linea</a>
             </div>
         </div>
 
         <!-- search form (Optional) -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                <input type="text" name="q" class="form-control" placeholder="Busqueda..."/>
           <span class="input-group-btn">
             <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
             </button>

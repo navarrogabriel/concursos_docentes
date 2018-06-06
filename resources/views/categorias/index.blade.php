@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1 class="pull-left">Categorias</h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('categorias.create') !!}">Add New</a>
+           <a class="btn btn-primary pull-right  fa fa-plus-square" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('categorias.create') !!}"></a>
         </h1>
     </section>
     <div class="content">
@@ -18,6 +18,8 @@
                     @include('categorias.table')
             </div>
         </div>
+        <div class="text-center">
+
+        </div>
     </div>
 @endsection
-

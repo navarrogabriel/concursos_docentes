@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\perfiles;
+use App\Models\Perfiles;
 
-class CreateperfilesRequest extends FormRequest
+class CreatePerfilesRequest extends FormRequest
 {
 
     /**
@@ -25,6 +25,6 @@ class CreateperfilesRequest extends FormRequest
      */
     public function rules()
     {
-        return perfiles::$rules;
+        return Perfiles::$rules;
     }
 }

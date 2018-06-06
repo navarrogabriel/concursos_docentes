@@ -1,0 +1,52 @@
+[
+    {
+        "name": "id",
+        "dbType": "integer,true",
+        "htmlType": null,
+        "validations": null,
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "nombre",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": null,
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,cargosconcursados"
+    },
+    {
+        "type": "relation",
+        "relation": "1tm,Carrera"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursosjurados"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,concursospostulantes"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,llamadosconcursos"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,requisitos"
+    },
+    {
+        "type": "relation",
+        "relation": "mtm,,requisitospostulantes"
+    }
+]

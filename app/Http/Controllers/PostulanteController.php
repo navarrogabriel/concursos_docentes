@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PostulanteDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreatePostulanteRequest;
 use App\Http\Requests\UpdatePostulanteRequest;
 use App\Repositories\PostulanteRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class PostulanteController extends AppBaseController
@@ -24,16 +24,12 @@ class PostulanteController extends AppBaseController
     /**
      * Display a listing of the Postulante.
      *
-     * @param Request $request
+     * @param PostulanteDataTable $postulanteDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PostulanteDataTable $postulanteDataTable)
     {
-        $this->postulanteRepository->pushCriteria(new RequestCriteria($request));
-        $postulantes = $this->postulanteRepository->all();
-
-        return view('postulantes.index')
-            ->with('postulantes', $postulantes);
+        return $postulanteDataTable->render('postulantes.index');
     }
 
     /**

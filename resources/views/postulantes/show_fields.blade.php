@@ -10,10 +10,10 @@
     <p>{!! $postulante->nombres !!}</p>
 </div>
 
-<!-- Apellido Field -->
+<!-- Apellidos Field -->
 <div class="form-group">
-    {!! Form::label('apellido', 'Apellido:') !!}
-    <p>{!! $postulante->apellido !!}</p>
+    {!! Form::label('apellidos', 'Apellidos:') !!}
+    <p>{!! $postulante->apellidos !!}</p>
 </div>
 
 <!-- Documento Field -->
@@ -44,17 +44,5 @@
 <div class="form-group">
     {!! Form::label('direccion', 'Direccion:') !!}
     <p>{!! $postulante->direccion !!}</p>
-</div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $postulante->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $postulante->updated_at !!}</p>
 </div>
 

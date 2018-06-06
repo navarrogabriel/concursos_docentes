@@ -1,3 +1,4 @@
+
 @foreach ((array) session('flash_notification') as $message)
 @php $message = (array)$message[0]; @endphp
     @if ($message['overlay'])

@@ -5,23 +5,21 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class perfiles
- * @package App\Models
- * @version May 3, 2018, 9:59 pm UTC
- */
-class perfiles extends Model
+class Perfiles extends Model
 {
     use SoftDeletes;
 
     public $table = 'perfiles';
+
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'descripcion'
+        'nombre'
     ];
 
     /**
@@ -30,7 +28,8 @@ class perfiles extends Model
      * @var array
      */
     protected $casts = [
-        'descripcion' => 'string'
+        'id' => 'integer',
+        'nombre' => 'string'
     ];
 
     /**
@@ -39,12 +38,22 @@ class perfiles extends Model
      * @var array
      */
     public static $rules = [
-
+        'nombre' => 'required'
     ];
-    public function concurso()
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function concursos()
     {
-      return $this->hasMany('App\Models\Concursos' , 'id');
+        return $this->hasMany(\App\Models\Concurso::class);
     }
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function requisitos()
+    {
+        return $this->hasMany(\App\Models\Requisito::class);
+    }
 }

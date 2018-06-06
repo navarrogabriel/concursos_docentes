@@ -29,7 +29,8 @@ return [
     |
     */
 
-    'lifetime' => 120,
+    /* CAMBIO DE 120 A 1440 (UN DIA) DE DURACION DE SESSION JORGE GAMEZ*/
+    'lifetime' => 1440,
 
     'expire_on_close' => false,
 

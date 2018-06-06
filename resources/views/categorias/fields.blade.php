@@ -1,7 +1,14 @@
-<!-- Descripcion Field -->
+<!-- Nombre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('nombre', 'Nombre:') !!}
+    {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Nivel Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('nivel', 'Nivel:') !!}
+    {!! Form::text('nivel', null , ['class' => 'form-control']) !!}
+    </label>
 </div>
 
 <!-- Submit Field -->

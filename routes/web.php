@@ -14,43 +14,59 @@
 Route::get('/', function () {
   return redirect('home');
 });
+Route::get('/calendario', function () {
+  return view('calendario.calendario');
+});
+Route::get('/test', function () {
+  return view('calendario.test');
+});
 
-
-
-
-
-
-//Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@getReset');
-//Route::post('/password/reset', 'Auth\ResetPasswordController@postReset');
+/*Route::resource('/calendario', function () {
+    return redirect('calendario.calendar');
+});*/
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/calendar', 'HomeController@calendar');
+//Route::resource('/calendario', 'CalendarioController');
 
-Route::resource('users', 'UserController');
-
-Route::resource('postulantes', 'PostulanteController');
-
-Route::resource('areas', 'AreasController');
-
-Route::resource('institutos', 'institutosController');
+Route::resource('areas', 'AreaController');
 
 Route::resource('asignaturas', 'AsignaturaController');
 
-Route::resource('categorias', 'CategoriasController');
+Route::resource('cargoConcursados', 'CargoConcursadoController');
 
-Route::resource('dedicaciones', 'dedicacionesController');
+Route::resource('carreras', 'CarreraController');
 
-Route::resource('jurados', 'juradosController');
+Route::resource('categorias', 'CategoriaController');
 
-Route::resource('perfiles', 'perfilesController');
+Route::resource('concursos', 'ConcursoController');
 
-Route::resource('concursos', 'ConcursosController');
+Route::resource('concursoJurados', 'ConcursoJuradoController');
 
-Route::resource('concursospostulantes', 'concursospostulantesController');
+Route::resource('concursoPostulantes', 'ConcursoPostulanteController');
 
-Route::resource('concursosjurados', 'concursosjuradosController');
+Route::resource('institutos', 'InstitutoController');
 
-Route::resource('ordenesmeritos', 'ordenesmeritoController');
+Route::resource('jurados', 'JuradoController');
+
+Route::resource('llamados', 'LlamadoController');
+
+Route::resource('logs', 'LogController');
+
+Route::resource('llamadoConcursos', 'LlamadoConcursosController');
+
+Route::resource('perfiles', 'PerfilesController');
+
+Route::resource('postulantes', 'PostulanteController');
+
+Route::resource('requisitos', 'RequisitoController');
+
+Route::resource('requisitoItems', 'RequisitoItemController');
+
+Route::resource('requisitoPostulantes', 'RequisitoPostulanteController');
+
+Route::resource('universidads', 'UniversidadController');
+
+Route::resource('users', 'UserController');

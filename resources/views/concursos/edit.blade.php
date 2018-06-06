@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Concursos
+            Concurso
         </h1>
    </section>
    <div class="content">
@@ -11,7 +11,7 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($concursos, ['route' => ['concursos.update', $concursos->id], 'method' => 'patch']) !!}
+                   {!! Form::model($concurso, ['route' => ['concursos.update', $concurso->id], 'method' => 'patch']) !!}
 
                         @include('concursos.fields')
 

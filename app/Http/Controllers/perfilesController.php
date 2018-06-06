@@ -2,42 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateperfilesRequest;
-use App\Http\Requests\UpdateperfilesRequest;
+use App\DataTables\PerfilesDataTable;
+use App\Http\Requests;
+use App\Http\Requests\CreatePerfilesRequest;
+use App\Http\Requests\UpdatePerfilesRequest;
 use App\Repositories\PerfilesRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
-class perfilesController extends AppBaseController
+class PerfilesController extends AppBaseController
 {
     /** @var  PerfilesRepository */
-    private $PerfilesRepository;
+    private $perfilesRepository;
 
     public function __construct(PerfilesRepository $perfilesRepo)
     {
-        $this->PerfilesRepository = $perfilesRepo;
+        $this->perfilesRepository = $perfilesRepo;
     }
 
     /**
-     * Display a listing of the perfiles.
+     * Display a listing of the Perfiles.
      *
-     * @param Request $request
+     * @param PerfilesDataTable $perfilesDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PerfilesDataTable $perfilesDataTable)
     {
-        $this->PerfilesRepository->pushCriteria(new RequestCriteria($request));
-        $perfiles = $this->PerfilesRepository->all();
-
-        return view('perfiles.index')
-            ->with('perfiles', $perfiles);
+        return $perfilesDataTable->render('perfiles.index');
     }
 
     /**
-     * Show the form for creating a new perfiles.
+     * Show the form for creating a new Perfiles.
      *
      * @return Response
      */
@@ -47,17 +43,17 @@ class perfilesController extends AppBaseController
     }
 
     /**
-     * Store a newly created perfiles in storage.
+     * Store a newly created Perfiles in storage.
      *
-     * @param CreateperfilesRequest $request
+     * @param CreatePerfilesRequest $request
      *
      * @return Response
      */
-    public function store(CreateperfilesRequest $request)
+    public function store(CreatePerfilesRequest $request)
     {
         $input = $request->all();
 
-        $perfiles = $this->PerfilesRepository->create($input);
+        $perfiles = $this->perfilesRepository->create($input);
 
         Flash::success('Perfiles saved successfully.');
 
@@ -65,7 +61,7 @@ class perfilesController extends AppBaseController
     }
 
     /**
-     * Display the specified perfiles.
+     * Display the specified Perfiles.
      *
      * @param  int $id
      *
@@ -73,7 +69,7 @@ class perfilesController extends AppBaseController
      */
     public function show($id)
     {
-        $perfiles = $this->PerfilesRepository->findWithoutFail($id);
+        $perfiles = $this->perfilesRepository->findWithoutFail($id);
 
         if (empty($perfiles)) {
             Flash::error('Perfiles not found');
@@ -85,7 +81,7 @@ class perfilesController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified perfiles.
+     * Show the form for editing the specified Perfiles.
      *
      * @param  int $id
      *
@@ -93,7 +89,7 @@ class perfilesController extends AppBaseController
      */
     public function edit($id)
     {
-        $perfiles = $this->PerfilesRepository->findWithoutFail($id);
+        $perfiles = $this->perfilesRepository->findWithoutFail($id);
 
         if (empty($perfiles)) {
             Flash::error('Perfiles not found');
@@ -105,16 +101,16 @@ class perfilesController extends AppBaseController
     }
 
     /**
-     * Update the specified perfiles in storage.
+     * Update the specified Perfiles in storage.
      *
      * @param  int              $id
-     * @param UpdateperfilesRequest $request
+     * @param UpdatePerfilesRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateperfilesRequest $request)
+    public function update($id, UpdatePerfilesRequest $request)
     {
-        $perfiles = $this->PerfilesRepository->findWithoutFail($id);
+        $perfiles = $this->perfilesRepository->findWithoutFail($id);
 
         if (empty($perfiles)) {
             Flash::error('Perfiles not found');
@@ -122,7 +118,7 @@ class perfilesController extends AppBaseController
             return redirect(route('perfiles.index'));
         }
 
-        $perfiles = $this->PerfilesRepository->update($request->all(), $id);
+        $perfiles = $this->perfilesRepository->update($request->all(), $id);
 
         Flash::success('Perfiles updated successfully.');
 
@@ -130,7 +126,7 @@ class perfilesController extends AppBaseController
     }
 
     /**
-     * Remove the specified perfiles from storage.
+     * Remove the specified Perfiles from storage.
      *
      * @param  int $id
      *
@@ -138,7 +134,7 @@ class perfilesController extends AppBaseController
      */
     public function destroy($id)
     {
-        $perfiles = $this->PerfilesRepository->findWithoutFail($id);
+        $perfiles = $this->perfilesRepository->findWithoutFail($id);
 
         if (empty($perfiles)) {
             Flash::error('Perfiles not found');
@@ -146,7 +142,7 @@ class perfilesController extends AppBaseController
             return redirect(route('perfiles.index'));
         }
 
-        $this->PerfilesRepository->delete($id);
+        $this->perfilesRepository->delete($id);
 
         Flash::success('Perfiles deleted successfully.');
 

@@ -1,4 +1,4 @@
-<div id="flash-overlay-modal" class="modal fade {{ $modalClass or '' }}">
+<div id="flash-overlay-modal" class="modal fade {{ $modalClass or '' }}" OnHover="play(this,'hoveraudio')">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

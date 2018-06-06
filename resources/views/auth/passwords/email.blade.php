@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Olvide mi contraseña</title>
+    <title>Concursos Docentes UNAJ</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -29,17 +29,37 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        html, body {
+            background-image: url('{{ asset('imagenes/fondo_pizarra.jpg')}}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: #063B50;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* Preserve aspet ratio */
+            min-width: 100%;
+            min-height: 100%;
+          }
+</style>
 
 </head>
-<body class="hold-transition login-page">
+<body class="">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>Concursos Docentes <br></b>UNAJ</a>
+        <a href="{{ url('/home') }}"><b>Concursos Docentes</b><br>UNAJ</a>
     </div>
 
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Ingrese su email si olvido su contraseña</p>
+        <p class="login-box-msg">Ingrese Email Para Resetear Su Contraseña</p>
 
         @if (session('status'))
             <div class="alert alert-success">
@@ -50,8 +70,8 @@
         <form method="post" action="{{ url('/password/email') }}">
             {!! csrf_field() !!}
 
-            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-                <input type="email" required= true class="form-control" name="email" value="{{ old('email') }}" placeholder="Direccion de Correo">
+            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
+                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 @if ($errors->has('email'))
                     <span class="help-block">
@@ -63,7 +83,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary pull-right">
-                        <i class="fa fa-btn fa-envelope"></i> Enviar Enlace de Cambio de Contraseña
+                        <i class="fa fa-btn fa-envelope"></i> Envia Enlace de Reseteo de Contraseña
                     </button>
                 </div>
             </div>

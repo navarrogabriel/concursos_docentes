@@ -1,24 +1,17 @@
 <!-- Id Field -->
 <div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $categorias->id !!}</p>
+    {!! Form::label('id', 'Registro ID:') !!}
+    <p>{!! $categoria->id !!}</p>
 </div>
 
-<!-- Descripcion Field -->
+<!-- Nombre Field -->
 <div class="form-group">
-    {!! Form::label('descripcion', 'Descripcion:') !!}
-    <p>{!! $categorias->descripcion !!}</p>
+    {!! Form::label('nombre', 'Nombre:') !!}
+    <p>{!! $categoria->nombre !!}</p>
 </div>
 
-<!-- Created At Field -->
+<!-- Nivel Field -->
 <div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $categorias->created_at !!}</p>
+    {!! Form::label('nivel', 'Nivel:') !!}
+    <p>{!! $categoria->nivel !!}</p>
 </div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $categorias->updated_at !!}</p>
-</div>
-
