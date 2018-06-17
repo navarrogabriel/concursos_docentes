@@ -29,8 +29,10 @@ class LlamadoConcursosDataTable extends DataTable
      */
     public function query()
     {
-        $llamadoConcursos = LlamadoConcursos::query();
-
+            $llamadoConcursos = LlamadoConcursos::query()->join('llamados' , 'llamadosconcursos.llamado_id' , '=' , 'llamados.id')
+                                                         ->join('concursos' , 'llamadosconcursos.concurso_id' , '=' , 'concursos.id')
+                                                         ->select('llamadosconcursos.id' ,'llamados.codigo as lla_cod' , 'concursos.referenciaGeneral as con_rf');
+        //var_dump($llamadoConcursos);
         return $this->applyScopes($llamadoConcursos);
     }
 
@@ -74,8 +76,9 @@ class LlamadoConcursosDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'llamado_id' => ['name' => 'llamado_id', 'data' => 'llamado_id'],
-            'concurso_id' => ['name' => 'concurso_id', 'data' => 'concurso_id']
+            //'LlamadoConcurso'=> ['name' => 'llamadosconcursos.id', 'data' => 'llacon_nom'],
+            'Llamado' => ['name' => 'llamados.codigo', 'data' => 'lla_cod'],
+            'Concurso' => ['name' => 'concursos.referenciaGeneral', 'data' => 'con_rf']
         ];
     }
 

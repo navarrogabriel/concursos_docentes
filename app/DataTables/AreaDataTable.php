@@ -27,7 +27,8 @@ class AreaDataTable extends DataTable
      */
     public function query()
     {
-        $areas = Area::query();
+        $areas = Area::query()->join('carreras','areas.carrera_id','=','carreras.id')
+                  ->select('areas.id' , 'areas.nombre as area_nom', 'carreras.nombre as carr_nom');
 
         return $this->applyScopes($areas);
     }
@@ -72,8 +73,8 @@ class AreaDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'nombre' => ['name' => 'nombre', 'data' => 'nombre'],
-            'carrera_id' => ['name' => 'carrera_id', 'data' => 'carrera_id']
+            'Area' => ['name' => 'areas.nombre', 'data' => 'area_nom'],
+            'carrera' => ['name' => 'carreras.nombre', 'data' => 'carr_nom']
         ];
     }
 

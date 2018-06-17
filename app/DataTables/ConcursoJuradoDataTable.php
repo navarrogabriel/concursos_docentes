@@ -27,7 +27,14 @@ class ConcursoJuradoDataTable extends DataTable
      */
     public function query()
     {
-        $concursoJurados = ConcursoJurado::query();
+        $concursoJurados = ConcursoJurado::query()->join('concursos' , 'concursosjurados.concurso_id' , '=' , 'concursos.id')
+                                                  ->join('jurados' , 'concursosjurados.jurado_id' , '=' , 'jurados.id')
+                                                  ->select('concursosjurados.id',
+                                                           'concursos.referenciaGeneral as ref_gen' ,
+                                                           'jurados.nombres as jur_nom' ,
+                                                           'jurados.apellidos  as jur_ape' ,
+                                                           'concursosjurados.nivel as con_niv' ,
+                                                           'concursosjurados.tipo as tip_jur');
 
         return $this->applyScopes($concursoJurados);
     }
@@ -72,10 +79,11 @@ class ConcursoJuradoDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'concurso_id' => ['name' => 'concurso_id', 'data' => 'concurso_id'],
-            'jurado_id' => ['name' => 'jurado_id', 'data' => 'jurado_id'],
-            'nivel' => ['name' => 'nivel', 'data' => 'nivel'],
-            'tipo' => ['name' => 'tipo', 'data' => 'tipo']
+            'concurso_id' => ['name' => 'concurso_id', 'data' => 'ref_gen'],
+            'jurado Nombre' => ['name' => 'jurado_id', 'data' => 'jur_nom'],
+            'jurado Apellido' => ['name' => 'jurado_id', 'data' => 'jur_ape'],
+            'nivel' => ['name' => 'nivel', 'data' => 'con_niv'],
+            'tipo' => ['name' => 'tipo', 'data' => 'tip_jur']
         ];
     }
 

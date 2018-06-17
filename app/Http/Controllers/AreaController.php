@@ -20,6 +20,7 @@ class AreaController extends AppBaseController
     public function __construct(AreaRepository $areaRepo)
     {
         $this->areaRepository = $areaRepo;
+
     }
 
     /**

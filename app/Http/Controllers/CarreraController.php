@@ -32,6 +32,7 @@ class CarreraController extends AppBaseController
     {
         $institutos = Instituto::pluck('nombre' , 'id') ;
         return $carreraDataTable->render('carreras.index' , compact('institutos'));
+        
     }
 
     /**

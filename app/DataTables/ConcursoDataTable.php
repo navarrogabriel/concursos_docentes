@@ -27,7 +27,19 @@ class ConcursoDataTable extends DataTable
      */
     public function query()
     {
-        $concursos = Concurso::query();
+        $concursos = Concurso::query()->join('asignaturas' , 'concursos.asignatura_id' , '=' , 'asignaturas.id')
+                                      ->join('categorias' , 'concursos.categoria_id' , '=' , 'categorias.id')
+                                      ->select('asignaturas.nombre as asig_nom' ,
+                                               'categorias.nombre  as cat_nom' ,
+                                               'concursos.id','concursos.referenciaGeneral as ref_gen' ,
+                                               'concursos.id','concursos.cargos as con_car' ,
+                                               'concursos.id','concursos.expediente as con_exp' ,
+                                               'concursos.id','concursos.fechaSustanciacion as con_fs' ,
+                                               'concursos.id','concursos.fechaInicio as con_fi' ,
+                                               'concursos.id','concursos.fechaFin as con_ff' ,
+                                               'concursos.id','concursos.estado as con_est',
+                                               'concursos.id','concursos.dedicacion as con_ded' ,
+                                               'concursos.id','concursos.dictamen as con_dic'  );
 
         return $this->applyScopes($concursos);
     }
@@ -72,24 +84,24 @@ class ConcursoDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'asignatura_id' => ['name' => 'asignatura_id', 'data' => 'asignatura_id'],
+            'Asignatura' => ['name' => 'asignatura_id', 'data' => 'asig_nom'],
             //'perfil_id' => ['name' => 'perfil_id', 'data' => 'perfil_id'],
-            'categoria_id' => ['name' => 'categoria_id', 'data' => 'categoria_id'],
-            'referenciaGeneral' => ['name' => 'referenciaGeneral', 'data' => 'referenciaGeneral'],
+            'Categoria' => ['name' => 'categoria_id', 'data' => 'cat_nom'],
+            'Referencia General' => ['name' => 'referenciaGeneral', 'data' => 'ref_gen'],
             //'referenciaInstituto' => ['name' => 'referenciaInstituto', 'data' => 'referenciaInstituto'],
-            'cargos' => ['name' => 'cargos', 'data' => 'cargos'],
+            'Cargos' => ['name' => 'cargos', 'data' => 'con_car'],
             //'lineaDesarrollo' => ['name' => 'lineaDesarrollo', 'data' => 'lineaDesarrollo'],
             //'requisitos' => ['name' => 'requisitos', 'data' => 'requisitos'],
-            'expediente' => ['name' => 'expediente', 'data' => 'expediente'],
-            'fechaSustanciacion' => ['name' => 'fechaSustanciacion', 'data' => 'fechaSustanciacion'],
+            'Expediente' => ['name' => 'expediente', 'data' => 'con_exp'],
+            'Fecha Sustanciacion' => ['name' => 'fechaSustanciacion', 'data' => 'con_fs'],
             //'usuarioSustanciacion' => ['name' => 'usuarioSustanciacion', 'data' => 'usuarioSustanciacion'],
             //'usuarioCierre' => ['name' => 'usuarioCierre', 'data' => 'usuarioCierre'],
             //'observaciones' => ['name' => 'observaciones', 'data' => 'observaciones'],
-            'fechaInicio' => ['name' => 'fechaInicio', 'data' => 'fechaInicio'],
-            'fechaFin' => ['name' => 'fechaFin', 'data' => 'fechaFin'],
-            'estado' => ['name' => 'estado', 'data' => 'estado'],
-            'dedicacion' => ['name' => 'dedicacion', 'data' => 'dedicacion'],
-            'dictamen' => ['name' => 'dictamen', 'data' => 'dictamen']
+            'Fecha Inicio' => ['name' => 'fechaInicio', 'data' => 'con_fi'],
+            'Fecha Fin' => ['name' => 'fechaFin', 'data' => 'con_ff'],
+            'Estado' => ['name' => 'estado', 'data' => 'con_est'],
+            'Dedicacion' => ['name' => 'dedicacion', 'data' => 'con_ded'],
+            'Dictamen' => ['name' => 'dictamen', 'data' => 'con_dic']
         ];
     }
 

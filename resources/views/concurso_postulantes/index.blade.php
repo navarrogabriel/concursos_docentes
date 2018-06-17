@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1 class="pull-left">Asignación de postulantes a concursos</h1>
         <h1 class="pull-right">
-           <a class="btn btn-primary pull-right  fa fa-plus-square" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('concursoPostulantes.create') !!}"></a>
+           <a class="btn btn-primary pull-right  fa fa-plus-square" data-toggle="tooltip" title ="Crear Nuevo" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('concursoPostulantes.create') !!}"> Agregar Nuevo</a>
         </h1>
     </section>
     <div class="content">

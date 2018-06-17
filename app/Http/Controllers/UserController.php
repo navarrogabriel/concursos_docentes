@@ -39,7 +39,7 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        $roles = collect(['Administrador' => 'Administrador']);
+        $roles = collect(['Administrador' => 'Administrador' , 'Administrativo' => 'Administrativo' , 'Miembro' => 'Miembro']);
         $estado = collect(['HABILITADO' => 'Habilitado' , 'DESHABILITADO' => 'Deshabilitado']);
         return view('users.create' , compact('roles' , 'estado'));
     }
@@ -92,7 +92,7 @@ class UserController extends AppBaseController
     public function edit($id)
     {
         $user = $this->userRepository->findWithoutFail($id);
-        $roles = collect(['Administrador' => 'Administrador']);
+        $roles = collect(['Administrador' => 'Administrador', 'Administrativo' => 'Administrativo', 'Miembro' => 'Miembro']);
         $estado = collect(['HABILITADO' => 'Habilitado' , 'DESHABILITADO' => 'Deshabilitado']);
         if (empty($user)) {
             Flash::error('User not found');

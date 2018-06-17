@@ -1,6 +1,7 @@
 <audio id="clickaudio" src="audio/SD_NAVIGATE_53.mp3" autoplay></audio>
 <ul class="sidebar-menu tree" data-widget="tree">
-  <li class="header  bg-light-blue text-center">MENU PRINCIPAL</li>
+  <li class="header  bg-light-blue text-center">MENU PRINCIPAL : {{Strtoupper(Auth::user()->rol)}}</li>
+
   <!---------------------------------------------------------------------------------------------------------------------->
     <li class="treeview" >
 
@@ -128,21 +129,3 @@
 </ul>
 </li>
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
-  <a href="#">
-  <i class="fa fa-user text-aqua " ></i> <span>Gestion de Usuarios</span>
-    <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-  </a>
-  <ul class="treeview-menu">
-    <li class="{{ Request::is('log*') ? 'active' : '' }}" Onclick="play(this,'clickaudio')">
-        <a href="{!! route('logs.index') !!}"><i class="fa fa-history text-light-blue"></i><span>Logs</span></a>
-    </li>
-    <li class="{{ Request::is('User*') ? 'active' : '' }}" Onclick="play(this,'clickaudio')">
-        <a href="{!! route('users.index') !!}"><i class="fa fa-user text-light-blue"></i><span>Usuarios</span></a>
-    </li>
-
-  </ul>
-</li>
-
-</li>
-</ul>

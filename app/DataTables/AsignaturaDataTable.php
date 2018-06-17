@@ -27,7 +27,8 @@ class AsignaturaDataTable extends DataTable
      */
     public function query()
     {
-        $asignaturas = Asignatura::query();
+        $asignaturas = Asignatura::query()->join('areas' , 'asignaturas.area_id' , '=' , 'areas.id')
+                    ->select('asignaturas.id' , 'asignaturas.nombre as asig_nom' , 'areas.nombre as area_nom');
 
         return $this->applyScopes($asignaturas);
     }
@@ -72,8 +73,8 @@ class AsignaturaDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'nombre' => ['name' => 'nombre', 'data' => 'nombre'],
-            'area_id' => ['name' => 'area_id', 'data' => 'area_id']
+            'Asignatura' => ['name' => 'asignaturas.nombre', 'data' => 'asig_nom'],
+            'Area' => ['name' => 'areas.nombre', 'data' => 'area_nom']
         ];
     }
 

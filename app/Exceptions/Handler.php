@@ -44,6 +44,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+
+      //dd($exception);
+
+     if ($exception->getStatusCode() == 500)
+        {
+         return redirect('errors/500');
+       }
+
+    if ($exception->getStatusCode() == 404)
+       {
+         return redirect('errors/404');
+       }
+
+    /*if ($exception instanceof HttpException)
+      {
+      return redirect('errors/500');
+    }*/
         return parent::render($request, $exception);
     }
 

@@ -27,7 +27,14 @@ class CargoConcursadoDataTable extends DataTable
      */
     public function query()
     {
-        $cargoConcursados = CargoConcursado::query();
+        $cargoConcursados = CargoConcursado::query()->join('universidades' , 'cargosconcursados.universidad_id' , '=' , 'universidades.id')
+                                                    ->join('categorias' , 'cargosconcursados.categoria_id' , '=' , 'categorias.id')
+                                                    ->select('cargosconcursados.id' ,'cargosconcursados.registro_id as reg_id' ,  'universidades.nombre as uni_nom' , 'categorias.nombre as cat_nom' ,'cargosconcursados.dedicacion as dedicacion', 'cargosconcursados.registroTipo as registroTipo' );
+
+
+
+
+
 
         return $this->applyScopes($cargoConcursados);
     }
@@ -72,9 +79,9 @@ class CargoConcursadoDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'registro_id' => ['name' => 'registro_id', 'data' => 'registro_id'],
-            'universidad_id' => ['name' => 'universidad_id', 'data' => 'universidad_id'],
-            'categoria_id' => ['name' => 'categoria_id', 'data' => 'categoria_id'],
+            'registro_id' => ['name' => 'registro_id', 'data' => 'reg_id'],
+            'Universidad' => ['name' => 'universidades.nombre', 'data' => 'uni_nom'],
+            'Categorias' => ['name' => 'categorias.nombre', 'data' => 'cat_nom'],
             'dedicacion' => ['name' => 'dedicacion', 'data' => 'dedicacion'],
             'registroTipo' => ['name' => 'registroTipo', 'data' => 'registroTipo']
         ];

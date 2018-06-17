@@ -43,7 +43,14 @@
         <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu">
-            @include('layouts.menu')
+          @if (Auth::user()->rol == 'Administrador')
+              @include('layouts.menu_administrador')
+          @elseif (Auth::user()->rol == 'Administrativo')
+            @include('layouts.menu_administrativo')
+          @else
+              @include('layouts.menu_miembro')
+          @endif
+
         </ul>
         <!-- /.sidebar-menu -->
     </section>

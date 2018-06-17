@@ -28,10 +28,13 @@ class CarreraDataTable extends DataTable
      */
     public function query()
     {
-        $carreras = Carrera::query();
-
+        $carreras = Carrera::query()->join('institutos','carreras.instituto_id','=','institutos.id')
+                  ->select('carreras.id' , 'carreras.nombre as carr_nom', 'institutos.nombre as ins_nom');
         return $this->applyScopes($carreras);
     }
+
+    /*$posts = DB::table('posts')->join('users', 'posts.user_id', '=', 'users.id')
+            ->select(['posts.id', 'posts.title', 'users.name', 'users.email', 'posts.created_at', 'posts.updated_at']);*/
 
     /**
      * Optional method if you want to use html builder.
@@ -72,11 +75,12 @@ class CarreraDataTable extends DataTable
      */
     private function getColumns()
     {
-          //var_dump(Instituto::find(3)->nombre);
-          //var_dump(Instituto::pluck('nombre' , 'id'));
+
         return [
-            'nombre' => ['name' => 'nombre', 'data' => 'nombre'],
-            'instituto_id' => ['name' => 'instituto_id', 'data' => 'instituto_id' ]
+            'Carrera' => ['name' => 'carreras.nombre', 'data' => 'carr_nom'],
+            'Instituto' => ['name' => 'institutos.nombre', 'data' => 'ins_nom' ]
+
+
         ];
     }
 

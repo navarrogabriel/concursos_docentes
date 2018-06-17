@@ -1,0 +1,100 @@
+/*Halaman 404 Seocips*/
+canvas {display: block;z-index: 77777;}
+body{background:#333;margin:0;padding:0;font-family: calibri;color:#ddd;}
+#error-page {
+  position: fixed !important;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 88888;text-shadow:0 3px 4px #000;
+}
+#error-page a:link, #error-page a:visited, #error-page a:hover{text-decoration:none; color:#fff;font-weight: bold;}
+#error-inner {
+  margin: 11% auto;
+}
+
+#error-inner .box-404 {
+  width: 200px;
+  height: 200px;
+  background:rgba(1, 0, 1, 0.9);
+  color: #ccc;
+  font-size: 80px;
+  line-height: 200px;
+  border-radius: 10px;
+  margin: 0 auto 50px;
+  position: relative;
+  z-index:9999;box-shadow:0 3px 4px #000;border:1px solid #333;
+    text-shadow:0 3px 4px #000;
+}
+
+#error-inner .box-404::after {
+  content: &quot;
+  &quot;
+  ;
+  width: 0;
+  height: 0;
+  bottom: -8px;
+  border-color: #21afa4 transparent transparent;
+  border-style: solid;
+  border-width: 9px 9px 0;
+  position: absolute;
+  left: 47%;
+}
+
+#error-inner h1 {
+  text-transform: uppercase;
+}
+
+#search-box {
+  position: relative;
+  width: 350px;
+  margin: 10px auto
+}
+
+#cse-search-box {
+  height: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow:0 3px 4px #000;border:1px solid #333;
+}
+
+#search-text {
+  font-size: 12px;
+  color: #ddd;
+  border-width: 0;
+  background: transparent
+}
+
+#search-box input[type=&quot;
+text&quot;
+] {
+  width: 85%;
+  padding: 5px 20px 12px 0;
+  color: #666;
+  outline: none
+}
+
+#search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 32px;
+  width: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 0;
+  border-width: 0;
+  background: url(https://1.bp.blogspot.com/_C6KkooKXCEw/TIBqtV6pdmI/AAAAAAAAGyM/QUBsym_R9V0/s200/search-c.png) no-repeat;
+  cursor: pointer
+}
+
+#error-inner p {
+  line-height: 0.7em;
+  font-size: 15px;
+}
