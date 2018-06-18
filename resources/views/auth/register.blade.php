@@ -68,7 +68,7 @@
             {!! csrf_field() !!}
 
             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
+                <input type="text" required= true class="form-control" name="name" value="{{ old('name') }}" placeholder="Nombre Completo">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                 @if ($errors->has('name'))
@@ -78,8 +78,8 @@
                 @endif
             </div>
 
-            <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
-                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+            <div id=registerForm class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
+                <input type="email" required = true class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
                 @if ($errors->has('email'))
@@ -90,7 +90,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" id=password required= true class="form-control" name="password" placeholder="Contraseña">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password'))
@@ -101,7 +101,7 @@
             </div>
 
             <div class="form-group has-feedback{{ $errors->has('password_confirmation') ? ' has-error' : '' }}" OnHover="play(this,'hoveraudio')">
-                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                <input type="password" id=password_conf required= true name="password_confirmation" class="form-control" placeholder="Confirme contraseña">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
                 @if ($errors->has('password_confirmation'))
@@ -113,7 +113,7 @@
 
             <div class="row">
                 <div class="col-xs-8">
-                    <div class="checkbox icheck">
+                    <div id=registerCheckbox class="checkbox icheck">
                         <label>
                             <input type="checkbox"> Acepto los <a href="#">terminos</a>
                         </label>
@@ -121,7 +121,7 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Registro</button>
+                    <button type="submit" disabled=true id="registerButton" class="btn btn-primary btn-block btn-flat">Registro</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -140,7 +140,9 @@
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
-<script>
+<script src="{{ URL::asset('/js/register.js') }}"></script>
+
+<!-- <script>
     $(function () {
         $('input').iCheck({
             checkboxClass: 'icheckbox_square-blue',
@@ -148,6 +150,6 @@
             increaseArea: '20%' // optional
         });
     });
-</script>
+</script> -->
 </body>
 </html>
