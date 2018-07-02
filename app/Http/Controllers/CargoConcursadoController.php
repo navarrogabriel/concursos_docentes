@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Universidad;
 use App\Models\Categoria;
+use App\Models\Jurado;
 
 
 
@@ -43,11 +44,12 @@ class CargoConcursadoController extends AppBaseController
      */
     public function create()
     {
+        $personas = Jurado::pluck('apellidos' , 'id');
         $universidades = Universidad::pluck('nombre' , 'id');
         $categorias = Categoria::pluck('nombre' , 'id');
         $dedicaciones = collect(['Simple' => 'Simple' , 'Exclusiva' => 'Exclusiva' , 'SemiExclusiva' => 'SemiExclusiva']);
         $tipoRegistro = collect(['Postulante'=> 'Postulante' , 'Jurado' => 'Jurado']);
-        return view('cargo_concursados.create', compact ('universidades' , 'dedicaciones' , 'tipoRegistro' , 'categorias'));
+        return view('cargo_concursados.create', compact ('personas','universidades' , 'dedicaciones' , 'tipoRegistro' , 'categorias'));
     }
 
     /**
@@ -98,6 +100,7 @@ class CargoConcursadoController extends AppBaseController
     public function edit($id)
     {
         $cargoConcursado = $this->cargoConcursadoRepository->findWithoutFail($id);
+        $personas = Jurado::pluck('apellidos' , 'id');
         $universidades = Universidad::pluck('nombre' , 'id');
         $categorias = Categoria::pluck('nombre' , 'id');
         $dedicaciones = collect(['Simple' => 'Simple' , 'Exclusiva' => 'Exclusiva' , 'SemiExclusiva' => 'SemiExclusiva']);
@@ -109,7 +112,7 @@ class CargoConcursadoController extends AppBaseController
             return redirect(route('cargoConcursados.index'));
         }
 
-        return view('cargo_concursados.edit', compact ('universidades' , 'dedicaciones' , 'tipoRegistro' , 'categorias' ))->with('cargoConcursado', $cargoConcursado);
+        return view('cargo_concursados.edit', compact ('personas','universidades' , 'dedicaciones' , 'tipoRegistro' , 'categorias' ))->with('cargoConcursado', $cargoConcursado);
     }
 
     /**

@@ -1,3 +1,11 @@
+<!-- Categoria Id Field -->
+<div class="form-group">
+    {!! Form::label('categoria_id', 'Categoria:') !!}
+    <p>
+       Nombre : {!! $concursoJurado->categoria->nombre!!} <br>
+     </p>
+</div>
+
 <!-- Concurso Id Field -->
 <div class="form-group">
     {!! Form::label('concurso_id', 'Concurso:') !!}

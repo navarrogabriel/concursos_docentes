@@ -73,7 +73,9 @@ class RequisitoPostulanteDataTable extends DataTable
     {
         return [
             'postulante_id' => ['name' => 'postulante_id', 'data' => 'postulante_id'],
-            'requisitoEstado' => ['name' => 'requisitoEstado', 'data' => 'requisitoEstado']
+            'concurso_id' => ['name' => 'concurso_id', 'data' => 'concurso_id'],
+            'entregoRequisito' => ['name' => 'entregoRequisito', 'data' => 'entregoRequisito'],
+            'cumpleRequisito' => ['name' => 'cumpleRequisito', 'data' => 'cumpleRequisito']
         ];
     }
 

@@ -52,7 +52,7 @@ class PostulanteController extends AppBaseController
     public function store(CreatePostulanteRequest $request)
     {
         $input = $request->all();
-
+        $input['tipo'] = '1';
         $postulante = $this->postulanteRepository->create($input);
 
         Flash::success('Postulante saved successfully.');

@@ -1,8 +1,9 @@
-<!-- Registro Id Field -->
+<!-- Universidad Id Field -->
 <div class="form-group">
-    {!! Form::label('registro_id', 'Registro ID:') !!}
-    <p>{!! $cargoConcursado->registro_id !!}</p>
+    {!! Form::label('persona_id', 'Persona:') !!}
+    <p>{!! $cargoConcursado->persona_id !!}</p>
 </div>
+
 
 <!-- Universidad Id Field -->
 <div class="form-group">

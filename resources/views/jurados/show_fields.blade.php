@@ -4,11 +4,6 @@
     <p>{!! $jurado->id !!}</p>
 </div>
 
-<!-- Categoria Id Field -->
-<div class="form-group">
-    {!! Form::label('categoria_id', 'Categoria Id:') !!}
-    <p>{!! $jurado->categoria_id !!}</p>
-</div>
 
 <!-- Nombres Field -->
 <div class="form-group">

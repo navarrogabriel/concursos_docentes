@@ -28,10 +28,9 @@ class ConcursoPostulanteDataTable extends DataTable
     public function query()
     {
         $concursoPostulantes = ConcursoPostulante::query()->join('concursos' , 'concursospostulantes.concurso_id' , '=' , 'concursos.id')
-                                                    ->join('postulantes' , 'concursospostulantes.postulante_id' , '=' , 'postulantes.id')
+                                                    ->join('personas' , 'concursospostulantes.postulante_id' , '=' , 'personas.id')->where('personas.tipo','Postulante')
                                                     ->select('concursospostulantes.id','concursos.referenciaGeneral as ref_gen' ,
-                                                             'postulantes.nombres as pos_nom' ,  'postulantes.apellidos  as pos_ape' ,
-                                                              'concursospostulantes.cumpleRequisitos as cum_req' ,
+                                                             'personas.nombres as pos_nom' ,  'personas.apellidos  as pos_ape' ,
                                                               'concursospostulantes.fechaPresentacion as fec_pre' ,
                                                               'concursospostulantes.tipo as tip_pos',
                                                                'concursospostulantes.ordenMerito as ord_mer' );
@@ -82,7 +81,6 @@ class ConcursoPostulanteDataTable extends DataTable
             'concurso_id' => ['name' => 'concurso_id', 'data' => 'ref_gen'],
             'postulante_nombre' => ['name' => 'postulante_nom', 'data' => 'pos_nom'],
             'postulante_apellido' => ['name' => 'postulante_ape', 'data' => 'pos_ape'],
-            'cumpleRequisitos' => ['name' => 'cumpleRequisitos', 'data' => 'cum_req'],
             'fechaPresentacion' => ['name' => 'fechaPresentacion', 'data' => 'fec_pre'],
             'tipo' => ['name' => 'tipo', 'data' => 'tip_pos'],
             'ordenMerito' => ['name' => 'ordenMerito', 'data' => 'ord_mer']

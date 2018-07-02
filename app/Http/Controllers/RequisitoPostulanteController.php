@@ -9,6 +9,9 @@ use App\Http\Requests\UpdateRequisitoPostulanteRequest;
 use App\Repositories\RequisitoPostulanteRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Postulante;
+use App\Models\Concurso;
+use App\Models\RequisitoItem;
 use Response;
 
 class RequisitoPostulanteController extends AppBaseController
@@ -39,7 +42,12 @@ class RequisitoPostulanteController extends AppBaseController
      */
     public function create()
     {
-        return view('requisito_postulantes.create');
+        $requisitosItems = Requisitoitem::pluck('descripcion' , 'id');
+        $concursos = Concurso::pluck('referenciaGeneral' , 'id');
+        $postulantes = Postulante::where('tipo','Postulante')->pluck('nombres' , 'id');
+        $entregoRequisito = collect(['Si' => 'Si' , 'No' => 'No']);
+        $cumpleRequisito = collect(['Sin validar' => 'Sin validar' , 'Si' => 'Si', 'No' => 'No']);
+        return view('requisito_postulantes.create', compact ('requisitosItems','entregoRequisito','cumpleRequisito','concursos','postulantes'));
     }
 
     /**

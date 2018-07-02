@@ -9,7 +9,7 @@ class Postulante extends Model
 {
     use SoftDeletes;
 
-    public $table = 'postulantes';
+    public $table = 'personas';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -25,7 +25,8 @@ class Postulante extends Model
         'telefono',
         'celular',
         'email',
-        'direccion'
+        'direccion',
+        'tipo'
     ];
 
     /**

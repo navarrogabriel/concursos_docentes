@@ -19,8 +19,11 @@ class RequisitoPostulante extends Model
 
 
     public $fillable = [
+        'requisitoitem_id',
         'postulante_id',
-        'requisitoEstado'
+        'concurso_id',
+        'entregoRequisito',
+        'cumpleRequisito'
     ];
 
     /**
@@ -31,7 +34,9 @@ class RequisitoPostulante extends Model
     protected $casts = [
         'requisitoitem_id' => 'integer',
         'postulante_id' => 'integer',
-        'requisitoEstado' => 'boolean'
+        'concurso_id' => 'integer',
+        'entregoRequisito' => 'string',
+        'cumpleRequisito' => 'string'
     ];
 
     /**
@@ -42,7 +47,8 @@ class RequisitoPostulante extends Model
     public static $rules = [
       'requisitoitem_id' => 'required',
       'postulante_id' => 'required',
-      'requisitoEstado' => 'required'
+      'concurso_id' => 'required',
+      'entregoRequisito' => 'required'
     ];
 
     /**
@@ -51,6 +57,14 @@ class RequisitoPostulante extends Model
     public function postulante()
     {
         return $this->belongsTo(\App\Models\Postulante::class);
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function concurso()
+    {
+        return $this->belongsTo(\App\Models\Concurso::class);
     }
 
     /**

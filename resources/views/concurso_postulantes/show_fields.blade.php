@@ -21,11 +21,6 @@
     </p>
 </div>
 
-<!-- Cumplerequisitos Field -->
-<div class="form-group">
-    {!! Form::label('cumpleRequisitos', 'Cumplerequisitos:') !!}
-    <p>{!! $concursoPostulante->cumpleRequisitos !!}</p>
-</div>
 
 <!-- Fechapresentacion Field -->
 <div class="form-group">

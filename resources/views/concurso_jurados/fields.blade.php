@@ -1,3 +1,8 @@
+<!-- Categoria Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('categoria_id', 'Categoria:') !!}
+    {!! Form::select('categoria_id', $categorias  , null, ['class' => 'form-control' , 'placeholder' => 'Seleccione categoria']) !!}
+</div>
 <!-- Jurado Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('concurso_id', 'Concurso:') !!}

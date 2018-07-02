@@ -9,7 +9,7 @@ class Jurado extends Model
 {
     use SoftDeletes;
 
-    public $table = 'jurados';
+    public $table = 'personas';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -19,14 +19,14 @@ class Jurado extends Model
 
 
     public $fillable = [
-        'categoria_id',
         'nombres',
         'apellidos',
         'documento',
         'telefono',
         'celular',
         'email',
-        'direccion'
+        'direccion',
+        'tipo',
     ];
 
     /**
@@ -36,7 +36,6 @@ class Jurado extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'categoria_id' => 'integer',
         'nombres' => 'string',
         'apellidos' => 'string',
         'documento' => 'string',
@@ -52,7 +51,6 @@ class Jurado extends Model
      * @var array
      */
     public static $rules = [
-      'categoria_id' => 'required',
       'nombres' => 'required',
       'apellidos' => 'required',
       'documento' => 'required',

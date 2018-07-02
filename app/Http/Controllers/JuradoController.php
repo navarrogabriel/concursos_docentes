@@ -52,7 +52,7 @@ class JuradoController extends AppBaseController
     public function store(CreateJuradoRequest $request)
     {
         $input = $request->all();
-
+        $input['tipo'] = 'Jurado';
         $jurado = $this->juradoRepository->create($input);
 
         Flash::success('Jurado saved successfully.');

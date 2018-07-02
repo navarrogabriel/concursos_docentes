@@ -19,11 +19,10 @@ class CargoConcursado extends Model
 
 
     public $fillable = [
-        'registro_id',
+        'persona_id',
         'universidad_id',
         'categoria_id',
-        'dedicacion',
-        'registroTipo'
+        'dedicacion'
     ];
 
     /**
@@ -32,11 +31,10 @@ class CargoConcursado extends Model
      * @var array
      */
     protected $casts = [
-        'registro_id' => 'integer',
+        'persona_id' => 'integer',
         'universidad_id' => 'integer',
         'categoria_id' => 'integer',
-        'dedicacion' => 'string',
-        'registroTipo' => 'string'
+        'dedicacion' => 'string'
     ];
 
     /**
@@ -45,11 +43,10 @@ class CargoConcursado extends Model
      * @var array
      */
     public static $rules = [
-      'registro_id' => 'required',
+      'persona_id' => 'required',
       'universidad_id' => 'required',
       'categoria_id' => 'required',
-      'dedicacion' => 'required',
-      'registroTipo' => 'required'
+      'dedicacion' => 'required'
     ];
 
     /**
@@ -66,5 +63,11 @@ class CargoConcursado extends Model
     public function universidade()
     {
         return $this->belongsTo(\App\Models\Universidade::class);
+    }
+
+    public function persona()
+    {
+        //hay que buscar una forma de que devuelva jurados+postulantes ya que el modelo personas no existe
+        return $this->belongsTo(\App\Models\Jurado::class);
     }
 }

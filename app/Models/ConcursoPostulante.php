@@ -21,7 +21,6 @@ class ConcursoPostulante extends Model
     public $fillable = [
         'concurso_id',
         'postulante_id',
-        'cumpleRequisitos',
         'fechaPresentacion',
         'tipo',
         'ordenMerito'
@@ -35,7 +34,6 @@ class ConcursoPostulante extends Model
     protected $casts = [
         'concurso_id' => 'integer',
         'postulante_id' => 'integer',
-        'cumpleRequisitos' => 'string',
         'tipo' => 'string',
         'ordenMerito' => 'integer'
     ];
@@ -48,7 +46,6 @@ class ConcursoPostulante extends Model
     public static $rules = [
       'concurso_id' => 'required',
       'postulante_id' => 'required',
-      'cumpleRequisitos' => 'required',
       'tipo' => 'required',
     ];
 

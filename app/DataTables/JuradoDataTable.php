@@ -27,7 +27,7 @@ class JuradoDataTable extends DataTable
      */
     public function query()
     {
-        $jurados = Jurado::query();
+        $jurados = Jurado::query()->where('tipo', 'Jurado');
 
         return $this->applyScopes($jurados);
     }
@@ -72,7 +72,6 @@ class JuradoDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'categoria_id' => ['name' => 'categoria_id', 'data' => 'categoria_id'],
             'nombres' => ['name' => 'nombres', 'data' => 'nombres'],
             'apellidos' => ['name' => 'apellidos', 'data' => 'apellidos'],
             'documento' => ['name' => 'documento', 'data' => 'documento'],

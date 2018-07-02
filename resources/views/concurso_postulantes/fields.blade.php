@@ -10,13 +10,6 @@
     {!! Form::select('postulante_id', $postulantes , null, ['class' => 'form-control', 'placeholder' => 'Seleccione Postulante']) !!}
 </div>
 
-<!-- Cumplerequisitos Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('cumpleRequisitos', 'Cumple Requisitos:') !!}
-    {!! Form::select('cumpleRequisitos', $cumpleRequisitos,  null , ['class' => 'form-control' , 'placeholder' => 'Seleccione']) !!}
-
-</div>
-
 <!-- Fechapresentacion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fechaPresentacion', 'Fecha de Presentacion:') !!}

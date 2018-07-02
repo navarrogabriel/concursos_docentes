@@ -42,10 +42,9 @@ class ConcursoPostulanteController extends AppBaseController
     public function create()
     {
         $concursos = Concurso::pluck('referenciaGeneral' , 'id');
-        $postulantes = Postulante::pluck('nombres' , 'id');
+        $postulantes = Postulante::where('tipo','Postulante')->pluck('nombres' , 'id');
         $tipoPostulantes = collect(['Postulante' => 'Postulante' , 'Aspirante' => 'Aspirante']);
-        $cumpleRequisitos = collect(['Si' => 'Si' , 'No' => 'No']);
-        return view('concurso_postulantes.create' , compact('concursos' , 'postulantes' , 'tipoPostulantes' , 'cumpleRequisitos'));
+        return view('concurso_postulantes.create' , compact('concursos' , 'postulantes' , 'tipoPostulantes'));
     }
 
     /**
@@ -98,9 +97,8 @@ class ConcursoPostulanteController extends AppBaseController
 
         $concursoPostulante = $this->concursoPostulanteRepository->findWithoutFail($id);
         $concursos = Concurso::pluck('referenciaGeneral' , 'id');
-        $postulantes = Postulante::pluck('nombres' , 'id');
+        $postulantes = Postulante::where('tipo','Postulante')->pluck('nombres' , 'id');
         $tipoPostulantes = collect(['Postulante' => 'Postulante' , 'Aspirante' => 'Aspirante']);
-        $cumpleRequisitos = collect(['Si' => 'Si' , 'No' => 'No']);
 
         if (empty($concursoPostulante)) {
             Flash::error('Concurso Postulante not found');
@@ -108,7 +106,7 @@ class ConcursoPostulanteController extends AppBaseController
             return redirect(route('concursoPostulantes.index'));
         }
 
-        return view('concurso_postulantes.edit' , compact('concursos' , 'postulantes' , 'tipoPostulantes' , 'cumpleRequisitos'))->with('concursoPostulante', $concursoPostulante);
+        return view('concurso_postulantes.edit' , compact('concursos' , 'postulantes' , 'tipoPostulantes'))->with('concursoPostulante', $concursoPostulante);
     }
 
     /**

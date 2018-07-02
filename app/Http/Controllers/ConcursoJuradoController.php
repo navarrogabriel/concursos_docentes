@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Jurado;
 use App\Models\Concurso;
+use App\Models\Categoria;
 
 
 class ConcursoJuradoController extends AppBaseController
@@ -43,10 +44,11 @@ class ConcursoJuradoController extends AppBaseController
     public function create()
     {
         $concursos = Concurso::pluck('referenciaGeneral' ,'id' );
-        $jurados = Jurado::pluck('apellidos' , 'id');
+        $jurados = Jurado::where('tipo','Jurado')->pluck('apellidos' , 'id');
+        $categorias = Categoria::pluck('nombre' , 'id');
         $niveles = collect(['Interno'=>'Interno' , 'Externo' => 'Externo']);
         $tipoJurados = collect(['Titular' => 'Titular' , 'Suplente' => 'Suplente']);
-        return view('concurso_jurados.create' , compact('jurados','niveles','tipoJurados' , 'concursos'));
+        return view('concurso_jurados.create' , compact('jurados','niveles','tipoJurados' , 'concursos', 'categorias'));
     }
 
     /**
@@ -98,7 +100,8 @@ class ConcursoJuradoController extends AppBaseController
     {
       $concursoJurado = $this->concursoJuradoRepository->findWithoutFail($id);
         $concursos = Concurso::pluck('referenciaGeneral' , 'id' );
-        $jurados = Jurado::pluck('nombres' , 'id');
+        $jurados = Jurado::where('tipo','Jurado')->pluck('nombres' , 'id');
+        $categorias = Categoria::pluck('nombre' , 'id');
         $niveles = collect(['Interno'=>'Interno' , 'Externo' => 'Externo']);
         $tipoJurados = collect(['Titular' => 'Titular' , 'Suplente' => 'Suplente']);
         if (empty($concursoJurado)) {
@@ -107,7 +110,7 @@ class ConcursoJuradoController extends AppBaseController
             return redirect(route('concursoJurados.index'));
         }
 
-        return view('concurso_jurados.edit', compact('jurados','niveles','tipoJurados' , 'concursos'))->with('concursoJurado', $concursoJurado);
+        return view('concurso_jurados.edit', compact('jurados','niveles','tipoJurados' , 'concursos', 'categorias'))->with('concursoJurado', $concursoJurado);
     }
 
     /**

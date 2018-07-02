@@ -21,6 +21,7 @@ class ConcursoJurado extends Model
     public $fillable = [
         'concurso_id',
         'jurado_id',
+        'categoria_id',
         'nivel',
         'tipo'
     ];
@@ -33,6 +34,7 @@ class ConcursoJurado extends Model
     protected $casts = [
         'concurso_id' => 'integer',
         'jurado_id' => 'integer',
+        'categoria_id' => 'integer',
         'nivel' => 'string',
         'tipo' => 'string'
     ];
@@ -45,6 +47,7 @@ class ConcursoJurado extends Model
     public static $rules = [
       'concurso_id' => 'required',
       'jurado_id' => 'required',
+      'categoria_id' => 'required',
       'nivel' => 'required',
       'tipo' => 'required'
     ];
@@ -63,5 +66,13 @@ class ConcursoJurado extends Model
     public function jurado()
     {
         return $this->belongsTo(\App\Models\Jurado::class);
+    }
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function categoria()
+    {
+        return $this->belongsTo(\App\Models\Categoria::class);
     }
 }

@@ -27,7 +27,7 @@ class PostulanteDataTable extends DataTable
      */
     public function query()
     {
-        $postulantes = Postulante::query();
+        $postulantes = Postulante::query()->where('tipo', 'Postulante');
 
         return $this->applyScopes($postulantes);
     }

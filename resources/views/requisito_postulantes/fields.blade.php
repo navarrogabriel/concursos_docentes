@@ -1,17 +1,30 @@
-<!-- Postulante Id Field -->
+<!-- Requisito item Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('postulante_id', 'Postulante Id:') !!}
-    {!! Form::number('postulante_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('requisitoitem_id', 'Requisito item:') !!}
+    {!! Form::select('requisitoitem_id', $requisitosItems,  null, ['class' => 'form-control', 'placeholder' => '']) !!}
 </div>
 
-<!-- Requisitoestado Field -->
+
+<!-- Concurso Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('requisitoEstado', 'Requisitoestado:') !!}
-    <label class="checkbox-inline">
-        {!! Form::hidden('requisitoEstado', false) !!}
-        {!! Form::checkbox('requisitoEstado', '1', null) !!} 1
-    </label>
+    {!! Form::label('concurso_id', 'Concurso:') !!}
+    {!! Form::select('concurso_id', $concursos  , null, ['class' => 'form-control' , 'placeholder' => 'Seleccione Concurso']) !!}
 </div>
+
+<!-- Postulante Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('postulante_id', 'Postulante:') !!}
+    {!! Form::select('postulante_id', $postulantes , null, ['class' => 'form-control', 'placeholder' => 'Seleccione Postulante']) !!}
+</div>
+
+
+
+<!-- Etrego requisito Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('entregoRequisito', 'Entrego requisito:') !!}
+    {!! Form::select('entregoRequisito', $entregoRequisito,  null, ['class' => 'form-control', 'placeholder' => '']) !!}
+</div>
+
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
