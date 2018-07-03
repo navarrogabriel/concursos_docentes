@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs-rtl.css" />
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -26,6 +28,7 @@
         <!-- Logo -->
         <a href="{!! url('/home') !!}" class="logo">
             <b>CDUNAJ</b>
+   
         </a>
 
         <!-- Header Navbar -->
@@ -146,6 +149,11 @@
     <!-- Main Footer -->
     <footer class="main-footer" style="max-height: 100px;text-align: center">
 
+ <button data-intro='example1' data-step="1" data-hint="Boton de ayuda" id="boton-consejos"> Consejos </button>
+
+ <button data-intro='example2' data-step="2" data-hint="Boton de ayuda" id="boton-ayuda"> Ayuda </button>
+
+
         <strong>Copyright © 2018 <a href="#" target="_blank">Alumnos de Ingenieria de Software 2</a>.</strong> All rights reserved.
     </footer>
 
@@ -157,7 +165,50 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
+ <script>
+          $(document).ready(function(){        
+           
+           
+            introJs().refresh()
+            
+           if (localStorage.getItem("primeringreso") ==  null) {
+             	introJs().setOptions({ 
+                  	'skipLabel': 'Cerrar',
+                    'nextLabel': 'Siguiente',
+                    'prevLabel': 'Anterior',
+                    'exitOnEsc': 'false',
+                    'doneLabel': 'Cerrar',
+                    'showButtons': 'false',
+                    'exitOnOverlayClick': 'false',
+                    'tooltipPosition': 'right',
+                    'showStepNumbers' : 'false'
+                }).start();
+              	localStorage.setItem("primeringreso", "true");                    
+           }
+           else{}
+  		   	
+           $('#boton-consejos').click(function(){                       
+  				introJs().showHints();
+    	   });
+           
+           $('#boton-ayuda').click(function(){ 
+               
+            	introJs().setOptions({ 
+                  	'skipLabel': 'Cerrar',
+                    'nextLabel': 'Siguiente',
+                    'prevLabel': 'Anterior',
+                    'exitOnEsc': 'false',
+                    'doneLabel': 'Cerrar',
+                    'showButtons': 'false',
+                    'exitOnOverlayClick': 'false',
+                    'tooltipPosition': 'right',
+                    'showStepNumbers' : 'false'
+                }).start();
+           });   
 
+          });
+</script>
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
