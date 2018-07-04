@@ -3,7 +3,7 @@
   <li class="header  bg-red text-center">MENU PRINCIPAL : {{Strtoupper(Auth::user()->rol)}}</li>
 
   <!---------------------------------------------------------------------------------------------------------------------->
-    <li class="treeview" >
+    <li class="treeview"  data-intro='En esta sección va a poder gestionar sus concursos, tanto la asignación de jurados,postulantes como los cargos que se van a concursar según corresponda'>
 
       <a href="#">
       <i class="fa fa-trophy text-red"></i> <span>Gestion de Concursos</span>
@@ -29,7 +29,7 @@
   </li>
 
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los jurados, podra agregar, eliminar y modificar jurados para luego utilizarlos en los concursos'>
   <a href="#">
   <i class="fa fa-legal text-red" ></i> <span>Gestion de Jurados</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -44,7 +44,7 @@
 </li>
 
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview"  data-intro='En esta sección va a poder gestionar los postulantes, podra agregar, eliminar y modificar los datos en el sistema'>
   <a href="#">
   <i class="fa fa-users text-red"></i> <span>Gestion de Postulantes</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -57,7 +57,7 @@
   </ul>
 </li>
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los llamados que se van a realizar por concurso'>
   <a href="#">
   <i class="glyphicon glyphicon-bullhorn text-red" ></i> <span>Gestion de Llamados</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -73,7 +73,7 @@
   </ul>
 </li>
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los requisitos, es una sección obligatoria para que un concurso tenga correctamente cargados los requisitos para el llamado'>
   <a href="#">
   <i class="fa fa-folder text-red" ></i> <span>Gestion de Requisitos</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -92,7 +92,7 @@
 </li>
 
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los toda la información necesaria para el funcionamiento del sistema, cada item es necesario para poder generar un concurso, o un jurado (Ej. La universidad donde se realiza el concurso)'>
 <a href="#">
 <i class="glyphicon glyphicon-pencil text-red"></i> <span>Gestion de ABM's </span>
   <span class="pull-right-container">
@@ -129,7 +129,7 @@
 </ul>
 </li>
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='Función netamente administrativa, podra gestionar todos los usuarios del sistema.'>
   <a href="#">
   <i class="fa fa-user text-red " ></i> <span>Gestion de Usuarios</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
