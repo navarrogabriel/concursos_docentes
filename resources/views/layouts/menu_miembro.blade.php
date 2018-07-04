@@ -3,7 +3,7 @@
   <li class="header  bg-light-blue text-center">MENU PRINCIPAL : {{Strtoupper(Auth::user()->rol)}}</li>
 
   <!---------------------------------------------------------------------------------------------------------------------->
-    <li class="treeview" >
+    <li class="treeview"  data-intro='En esta sección va a poder gestionar sus concursos, tanto la asignación de jurados,postulantes como los cargos que se van a concursar según corresponda.'>
 
       <a href="#">
       <i class="fa fa-trophy text-grey "></i> <span>Gestion de Concursos</span>
@@ -17,7 +17,7 @@
   </li>
 
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los jurados, podra agregar, eliminar y modificar jurados para luego utilizarlos en los concursos'>
   <a href="#">
   <i class="fa fa-legal text-grey" ></i> <span>Gestion de Jurados</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -27,7 +27,7 @@
 </li>
 
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview" data-intro='En esta sección va a poder gestionar los postulantes, podra agregar, eliminar y modificar los datos en el sistema'>
   <a href="#">
   <i class="fa fa-users text-grey"></i> <span>Gestion de Postulantes</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
@@ -36,7 +36,7 @@
   </ul>
 </li>
 <!---------------------------------------------------------------------------------------------------------------------->
-<li class="treeview">
+<li class="treeview"  data-intro='En esta sección va a poder gestionar los llamados que se van a realizar por concurso'>
   <a href="#">
   <i class="glyphicon glyphicon-bullhorn text-grey" ></i> <span>Gestion de Llamados</span>
     <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
