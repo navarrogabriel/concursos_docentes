@@ -32,13 +32,13 @@
         </a>
 
         <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
+        <nav  class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
             <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
+            <div data-intro='Aqui puede ver sus mensajes, tareas  y notificaciones'  class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
 
                   <!-- Messages: style can be found in dropdown.less-->
@@ -66,7 +66,7 @@
               <li class="footer"><a href="#">View all</a></li>
             </ul>
           </li>
-          <li class="dropdown tasks-menu">
+          <li  class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">0</span>
@@ -149,9 +149,31 @@
     <!-- Main Footer -->
     <footer class="main-footer" style="max-height: 100px;text-align: center">
 
- <button data-intro='example1' data-step="1" data-hint="Boton de ayuda" id="boton-consejos"> Consejos </button>
+  <!-- <button   data-hint="Boton de ayuda" id="boton-consejos"> Consejos </button> -->
 
- <button data-intro='example2' data-step="2" data-hint="Boton de ayuda" id="boton-ayuda"> Ayuda </button>
+  <!-- <button  data-hint="Boton de ayuda" id=""> Ayuda </button> -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Ayuda
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://get.pxhere.com/photo/wing-line-communication-brand-product-font-decision-illustration-logo-diagram-message-icon-information-news-notice-shape-opening-tips-delivery-support-embassy-info-announcement-topics-of-the-day-proclamation-briefing-clip-art-notification-response-bulletin-rumor-memorandum-day-messages-sign-of-life-919106.jpg" style="width: 100%">
+      </div>
+      <div class="modal-footer">
+        <center><button type="button" class="btn btn-primary" data-dismiss="modal" id="boton-ayuda">TUTORIAL INTERACTIVO</button></center>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <button data-intro='example2' data-step="2" data-hint="Boton de ayuda" id="boton-ayuda"> Ayuda </button> -->
 
 
         <strong>Copyright © 2018 <a href="#" target="_blank">Alumnos de Ingenieria de Software 2</a>.</strong> All rights reserved.
